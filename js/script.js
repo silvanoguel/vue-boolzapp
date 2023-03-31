@@ -6,7 +6,7 @@ createApp({
             contacts: [
                 {
                     name: 'Michele',
-                    avatar: '_1.jpg',
+                    avatar: '_1',
                     visible: true,
                     messages: [
                         {
