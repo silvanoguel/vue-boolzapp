@@ -36,7 +36,6 @@
                     </div>
 
                 </div>
-
             
                 <div class="cta">
                     <div class="bell">
@@ -64,17 +63,17 @@
                     <span class="avatar-name">{{contact.name}}</span>
                 </div>
 
-
-
             </section>
             <!-- /Users Section -->
 
             <!-- Messages section -->
             <section class="messages">
+                <!-- User Info -->
                 <div class="user-info">
                     <div class="user-image">
-                        <img src="img/avatar_io.jpg" alt="">
-                        <span class="myname">Sofia</span>
+                        <img :src="`img/avatar${contacts[activeIndex].avatar}.jpg`" alt="">
+                        <p class="myname">{{contacts[activeIndex].name}}</p>
+                        <p>Ultimo accesso 12:00</p>
                     </div>
 
                     <div class="icons">
@@ -90,31 +89,43 @@
                     </div>
 
                 </div>
+                <!-- /User Info -->
 
+                <!-- Chat -->
                 <div class="chat">
 
-                    
+                    <div class="message-row send">
+                        <div class="message">
+                            hai portato a spasso il cane
+                        </div>
+                    </div>
+
+                    <div class="message-row received">
+                        <div class="message">
+                            hai portato a spasso il cane
+                        </div>
+                    </div>
                    
-
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum cupiditate quae consequatur cumque laudantium voluptate quo voluptas ea culpa necessitatibus nisi alias iste commodi, aliquid totam tempora facilis dolorem obcaecati!
                 </div>
+                <!-- /Chat -->
 
 
-
+                <!-- Footer -->
                 <footer>
                     <div class="smile">
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="message-input">
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text" placeholder=" Scrivi un messaggio">
                     </div>
                     <div class="microphone">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
 
                 </footer>
+                <!-- /Footer -->
 
-            </section>
+            </section> 
             <!-- /Messages section -->
 
             
