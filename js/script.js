@@ -173,7 +173,9 @@ createApp({
     },
 
     methods: {
-
+        displayMessages(indexToShow) {
+           this.activeIndex = indexToShow;
+        },
 
 
 

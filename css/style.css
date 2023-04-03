@@ -126,7 +126,9 @@ body {
     height: 25px;
     line-height: 25px;
     text-align: center;
-    vertical-align:middle
+    vertical-align:middle;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .search-input input {
@@ -175,9 +177,23 @@ body {
     vertical-align: middle;
 }
 
-.contacts {
+.contact-list {
+    flex-grow: 1;
+    background-color: white;
+    overflow-y: auto;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.contact-info {
     display: flex;
 }
+
 
 /* Chat */
 
@@ -192,15 +208,14 @@ body {
     margin-bottom: 10px;
     display: flex;
 }
-.message-row.send {
+.message-row.sent {
     justify-content: flex-end;
-
 }
 
 .message-row.received {
     justify-content: flex-start;
-
 }
+
 .message {
     padding: 10px 5px;
     min-width: 40%;
@@ -208,7 +223,7 @@ body {
     border-radius: 12px;
 }
 
-.send .message {
+.sent .message {
     background-color: #D5F9BA;
 }
 .received .message {
@@ -226,7 +241,7 @@ footer {
 }
 
 .message-input input {
-    width: 700px;
+    width: 400px;
     height: 30px;
     border:none;
     border-radius: 5px;
