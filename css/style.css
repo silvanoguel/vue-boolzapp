@@ -44,7 +44,6 @@ body {
 }
 
 /* personal info section */
-
 .icons {
     display: flex;
     color:#B1B1B1;
@@ -53,7 +52,6 @@ body {
 .personal-info {
     display: flex;
     padding: 8px;
-    /* debug */
     background-color: #EAEAEA;
     color: black;
     justify-content: space-between;
@@ -78,18 +76,12 @@ body {
 .cta {
     display: flex;
     align-items: center;
-    /* debug */
-    height: 80px;
     background-color: #8EDAFC;
 }
 
-.search-chat {
-    /* debug */
-    height: 60px;
-    background-color: #FAFAFA;
-}
-
 .bell {
+    margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: 20px;
     color: #8EDAFC;;
     background-color: white;
@@ -113,9 +105,12 @@ body {
 .search-chat {
     display: flex;
     align-items: center;
+    background-color: #FAFAFA;
 }
 
 .search-icon {
+    margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: 10px;
     color: #B1B1B1;
     background-color: white;
@@ -153,7 +148,6 @@ body {
 .user-info {
     display: flex;
     padding: 8px;
-    /* debug */
     background-color: #EAEAEA;
     color: black;
     justify-content: space-between;
@@ -199,6 +193,12 @@ body {
     background-color: #eaeaea;
     cursor: pointer;
 }
+
+.contact-time {
+    font-size: 10px;
+    width: 20%;
+}
+
 
 /* Chat */
 

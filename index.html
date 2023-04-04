@@ -20,7 +20,7 @@
                 <div class="personal-info">
                     <div class="personal-image">
                         <img src="img/avatar_io.jpg" alt="">
-                        <span class="myname">Sofia</span>
+                        <h4 class="myname">Sofia</h4>
                     </div>
 
                     <div class="icons">
@@ -66,12 +66,14 @@
                         <div class="contact-info">
                             <img class="avatar-img" :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <div class="contact-name">
-                                <h3 class="avatar-name">{{contact.name}}</h3>
-                                <p>ultimo accesso</p>
+                                <h4 class="avatar-name">{{contact.name}}</h4>
+                                <div class="last-message">
+                                    {{contact.messages[contact.messages.length - 1].message}}
+                                </div>
                             </div>
                         </div>
                         <div class="contact-time">
-                            12:00
+                            {{contact.messages[contact.messages.length - 1].date}}
                         </div>    
                     </div>
                 </div>
@@ -86,8 +88,7 @@
                 <div class="user-info">
                     <div class="user-image">
                         <img :src="`img/avatar${currentContact.avatar}.jpg`" alt="">
-                        <p class="myname">{{currentContact.name}}</p>
-                        <p></p>
+                        <h4 class="myname">{{currentContact.name}}</h4>
                     </div>
 
                     <div class="icons">
