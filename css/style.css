@@ -41,8 +41,6 @@ body {
 
 .messages {
     width: calc(100% - 30%);
-    /* debug */
-    background-color: crimson;
 }
 
 /* personal info section */
@@ -132,7 +130,7 @@ body {
 }
 
 .search-input input {
-    width: 400px;
+    width: 200px;
     height: 23px;
     border: 1px solid #F5F5F5;
 }
@@ -189,11 +187,18 @@ body {
     padding: 5px 10px;
     border-bottom: 1px solid lightgray;
 }
+.contact-item.active {
+    background-color: lightskyblue;
+}
 
 .contact-info {
     display: flex;
 }
 
+.contact-item:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
+}
 
 /* Chat */
 
@@ -228,6 +233,10 @@ body {
 }
 .received .message {
     background-color: white;
+}
+.message .date {
+    text-align: right;
+    font-size: 0.6rem;
 }
 
 /* Footer */

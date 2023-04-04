@@ -55,14 +55,14 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <div class="search-input">
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" @keyup="searchContacts()" v-model="searched" >
                     </div>
                 </div>
                 <!-- /Search bar -->
 
                 <!-- Contact list -->
                 <div class="contact-list" v-for="(contact, index) in contacts">
-                    <div class="contact-item" @click="displayMessages(index)">
+                    <div class="contact-item" :class="index === activeIndex ? 'active' : ''" @click="changeActiveIndex(index)">
                         <div class="contact-info">
                             <img class="avatar-img" :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <div class="contact-name">
@@ -74,8 +74,6 @@
                             12:00
                         </div>    
                     </div>
-
-
                 </div>
                 <!-- /Contact list -->
 
@@ -87,8 +85,8 @@
                 <!-- User Info -->
                 <div class="user-info">
                     <div class="user-image">
-                        <img :src="`img/avatar${contacts[activeIndex].avatar}.jpg`" alt="">
-                        <p class="myname">{{contacts[activeIndex].name}}</p>
+                        <img :src="`img/avatar${currentContact.avatar}.jpg`" alt="">
+                        <p class="myname">{{currentContact.name}}</p>
                         <p></p>
                     </div>
 
@@ -108,14 +106,14 @@
                 <!-- /User Info -->
 
                 <!-- Chat -->
-                <div class="chat" v-for="message in contacts[activeIndex].messages">
+                <div class="chat" v-for="message in currentContact.messages">
 
                     <div class="message-row" :class="message.status">
                         <div class="message">
-                            {{message.message}}
+                            <p>{{message.message}}</p>
+                            <p class="date">{{getDateTime(message.date)}}</p>
                         </div>
                     </div>
-
                    
                 </div>
                 <!-- /Chat -->
@@ -127,7 +125,7 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="message-input">
-                        <input type="text" placeholder=" Scrivi un messaggio">
+                        <input type="text" placeholder=" Scrivi un messaggio" v-model.trim="newMessage" @keyup.enter="addNewMessage()">
                     </div>
                     <div class="microphone">
                         <i class="fa-solid fa-microphone"></i>
@@ -146,7 +144,9 @@
 
     </div>
 
-
+    <!-- Luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
+    <!-- Custom Script -->
     <script src="js/script.js"></script>
 </body>
 </html>

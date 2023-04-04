@@ -1,9 +1,13 @@
 const { createApp } = Vue;
 
+const dt = luxon.DateTime;
+
 createApp({
     data() {
         return {
+            searched: '',
             activeIndex: 0,
+            newMessage: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -168,20 +172,59 @@ createApp({
                 }
             ]
 
+        }
+    },
 
+    computed: {
+        currentContact() {
+            return this.contacts[this.activeIndex];
         }
     },
 
     methods: {
-        displayMessages(indexToShow) {
-           this.activeIndex = indexToShow;
+        changeActiveIndex(newIndex) {
+           this.activeIndex = newIndex;
         },
 
+        getDateTime(dateStr) {
+            const myDate = dt.fromFormat(dateStr, "dd/MM/yyyy hh:mm:ss");
+            return myDate.toLocaleString(dt.TIME_24_SIMPLE);
+        },
 
+        addNewMessage() {
+            if (this.newMessage.length > 0) {
+                this.sendMessage();
+                setTimeout(() => {
+                    this.receiveMessage();
+                }, 1000);
+            }
+        },
 
+        sendMessage() {
+            const message = {
+            message: this.newMessage,
+            status: 'sent',
+            date:dt.now().toFormat("dd/MM/yyyy hh:mm:ss"),
+            };
+            this.currentContact.messages.push(message);
+            this.newMessage = "";
+        },
 
-    },
+        receiveMessage() {
+            const message = {
+            message: "OK",
+            date: dt.now().toFormat("dd/MM/yyyy hh:mm:ss"),
+            status: 'received',
+            };
+            this.currentContact.messages.push(message);
+        },
 
+        searchContacts() {
+            this.contacts = this.contacts.filter((contact) => {
+              return contact.name.toLowerCase().includes(this.searched.toLowerCase());
+            });
+        },
 
+    }    
 
 }).mount("#app");
