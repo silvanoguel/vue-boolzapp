@@ -16,7 +16,8 @@
         <div class="wrapper">
             <!-- Users section -->
             <section class="users">
-            
+
+                <!-- My personal info -->
                 <div class="personal-info">
                     <div class="personal-image">
                         <img src="img/avatar_io.jpg" alt="">
@@ -34,8 +35,8 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
-
                 </div>
+                <!-- My personal info -->
 
                 <!-- Cta -->
                 <div class="cta">
@@ -84,13 +85,17 @@
 
             <!-- Messages section -->
             <section class="messages">
+
                 <!-- User Info -->
                 <div class="user-info">
+                    <!-- Active user info -->
                     <div class="user-image">
                         <img :src="`img/avatar${currentContact.avatar}.jpg`" alt="">
                         <h4 class="myname">{{currentContact.name}}</h4>
                     </div>
-
+                    <!-- /Active user info -->
+                    
+                    <!-- Active user icons -->
                     <div class="icons">
                         <div>
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -102,23 +107,21 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
+                    <!-- Active user icons -->
 
                 </div>
                 <!-- /User Info -->
 
                 <!-- Chat -->
                 <div class="chat" v-for="message in currentContact.messages">
-
                     <div class="message-row" :class="message.status">
                         <div class="message">
                             <p>{{message.message}}</p>
                             <p class="date">{{getDateTime(message.date)}}</p>
                         </div>
                     </div>
-                   
                 </div>
                 <!-- /Chat -->
-
 
                 <!-- Footer -->
                 <footer>
@@ -131,17 +134,13 @@
                     <div class="microphone">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
-
                 </footer>
                 <!-- /Footer -->
 
             </section> 
             <!-- /Messages section -->
-
-            
         
         </div>
-
 
     </div>
 

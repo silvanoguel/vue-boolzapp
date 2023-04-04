@@ -1,4 +1,5 @@
 /* Reset */
+
 * {
     margin:0;
     padding: 0;
@@ -8,6 +9,8 @@
 img {
     max-width: 100%;
 }
+
+/* Layout */
 
 body {
     background: linear-gradient(180deg, #009688 10%, #DADBD4 10%);
@@ -32,18 +35,22 @@ body {
 .users {
     width: calc(100% - 70%);
     height: 100%;
-    /* debug */
     background-color: white;
     border-right: 1px solid white;
 }
-
-/* Layout */
 
 .messages {
     width: calc(100% - 30%);
 }
 
-/* personal info section */
+.contact-list {
+    flex-grow: 1;
+    background-color: white;
+    overflow-y: auto;
+}
+
+/* Personal info section */
+
 .icons {
     display: flex;
     color:#B1B1B1;
@@ -169,12 +176,6 @@ body {
     vertical-align: middle;
 }
 
-.contact-list {
-    flex-grow: 1;
-    background-color: white;
-    overflow-y: auto;
-}
-
 .contact-item {
     display: flex;
     justify-content: space-between;
@@ -198,7 +199,6 @@ body {
     font-size: 10px;
     width: 20%;
 }
-
 
 /* Chat */
 
@@ -263,4 +263,3 @@ footer {
 .microphone {
     color: #6B7376;
 }
-
